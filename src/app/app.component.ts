@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-stock-oac';
+  isExpanded = true
+  isLoggedIn = true
+
+  @ViewChild('sidenav', { static: true }) sidenav: any
+  constructor() {}
+
+  toggleSideBar() {
+    this.sidenav.toggle();
+  }
 }
